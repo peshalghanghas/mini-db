@@ -26,6 +26,16 @@ int main() {
                 printf("Usage: insert <key> <value>\n");
         }
 
+        else if (strncmp(input, "update ", 7) == 0) {
+            char key[100], value[100];
+            if (sscanf(input + 7, "%s %s", key, value) == 2) {
+                db_insert(key, value);  
+            }
+            else {
+                printf("Usage: update <key> <value>\n");
+            }
+        }
+        
         else if (strncmp(input, "select ", 7) == 0) {
             char* key = input + 7;
             char* value = db_select(key);
@@ -41,6 +51,10 @@ int main() {
         else if (strncmp(input, "delete ", 7) == 0) {
             char* key = input + 7;
             db_delete(key);
+        }
+
+        else if (strcmp(input, "list") == 0) {
+            db_list();
         }
 
         else if (strcmp(input, "exit") == 0) {

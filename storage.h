@@ -6,6 +6,7 @@ void db_close();
 void db_insert(const char* key, const char* value);
 char* db_select(const char* key);
 void db_delete(const char* key);
+void db_list();
 void db_rebuild_index();
 
 #endif

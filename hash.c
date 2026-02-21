@@ -92,3 +92,15 @@ void hash_free() {
         }
     }
 }
+
+void hash_list() {
+    printf("Stored keys:\n");
+
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        HashNode* node = table[i];
+        while (node) {
+            printf("- %s\n", node->key);
+            node = node->next;
+        }
+    }
+}

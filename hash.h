@@ -6,5 +6,7 @@ void hash_put(const char* key, long offset);
 long hash_get(const char* key);
 void hash_remove(const char* key);
 void hash_free();
+void hash_list();
+
 
 #endif

@@ -118,3 +118,8 @@ void db_rebuild_index() {
         free(key);
     }
 }
+
+void db_list() {
+    hash_list();
+}
+
